@@ -1,0 +1,64 @@
+body{
+    margin-top: 0px;
+}
+.player_selection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}    
+.heading{
+    font-size: 3em;
+}
+.selectPlayer_btn{
+    width: 9em;
+   height: 3em;
+    background-color: rgb(192, 192, 189);
+    border-color:  rgb(192, 192, 189);
+    font-size: 15px;
+    font-weight: bold;
+ }  
+.player_option{
+   display: flex;
+   justify-content: space-around;
+   margin-top: 2%;
+}
+.twoPlayer_btn{
+   margin-left: 35%;
+   width: 9em;
+   height: 3em;
+   background-color: rgb(247, 168, 168);
+   border-color:  rgb(247, 168, 168);
+   font-size: 15px;
+   font-weight: bold;
+}
+.AIplayer_btn{
+    margin-right: 35%;
+    width: 9em;
+   height: 3em;
+   background-color: rgb(177, 240, 118);
+   border-color:  rgb(177, 240, 118);
+   font-size: 15px;
+   font-weight: bold;
+}
+.game_board{
+    display: grid;
+    grid-template-columns: repeat(3,100px);
+    grid-template-rows: repeat(3,100px);
+    gap: 5px;
+    justify-content: center;
+    align-content: center;
+    margin-top: 5%;
+    
+}
+.square{
+    background-color: rgb(156, 156, 241);
+}
+.restart_btn{
+    background-color: rgb(218, 201, 105);
+    margin-top: 1em;
+    width: 100px;
+    height: 40px;
+    border-color:  rgb(218, 201, 105);
+    border-radius: 5px;
+    font-size: 20px;
+}
