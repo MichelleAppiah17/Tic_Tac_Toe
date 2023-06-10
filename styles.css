@@ -27,8 +27,8 @@ body{
 .twoPlayer_btn{
    width: 9em;
    height: 3em;
-   background-color: rgb(247, 168, 168);
-   border-color:  rgb(247, 168, 168);
+   background-color: rgb(54, 231, 208);
+   border-color:  rgb(54, 231, 208);
    font-size: 15px;
    font-weight: bold;
 }
@@ -36,8 +36,8 @@ body{
    
    width: 9em;
    height: 3em;
-   background-color: rgb(177, 240, 118);
-   border-color:  rgb(177, 240, 118);
+   background-color:  rgb(156, 156, 241);
+   border-color:   rgb(156, 156, 241);
    font-size: 15px;
    font-weight: bold;
 }
@@ -52,7 +52,7 @@ body{
     
 }
 .square{
-    background-color: rgb(156, 156, 241);
+    background-color: rgb(243, 125, 213);
 }
 .restart_btn{
     background-color: rgb(218, 201, 105);
