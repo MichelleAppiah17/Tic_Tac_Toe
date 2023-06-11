@@ -41,6 +41,43 @@ body{
    font-size: 15px;
    font-weight: bold;
 }
+.player_form{
+   position: absolute;
+   top: 30%;
+   left: 50%;
+}
+form{
+    background-color: rgb(201, 247, 155);
+    width: 10em;
+    height: 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    width: 9em;
+    height: 20px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.play_btn{
+    background-color: rgb(39, 243, 73);
+    border-color:  rgb(39, 243, 73);
+}
+
+.label-left{
+    font-size: 22px;
+    position: absolute;
+    top: 40%;
+    right: 20%;
+}
+.label-right{
+    font-size: 22px;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
 .game_board{
     display: grid;
     grid-template-columns: repeat(3,100px);
