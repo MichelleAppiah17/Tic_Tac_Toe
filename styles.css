@@ -82,15 +82,30 @@ input{
     display: grid;
     grid-template-columns: repeat(3,100px);
     grid-template-rows: repeat(3,100px);
-    gap: 5px;
+    gap: 10px;
     justify-content: center;
     align-content: center;
     margin-top: 5%;
     
 }
+#current_Player{
+    color: brown;
+    position: absolute;
+    top: 40%;
+    left: 38%;
+}
 .square{
     background-color: rgb(243, 125, 213);
-}
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: -4px;
+    margin-bottom: -4px;
+    line-height: 100px;
+  }
+
 .restart_btn{
     background-color: rgb(218, 201, 105);
     margin-top: 1em;

@@ -7,6 +7,8 @@ const playerForm = document.querySelector(".player_form");
 const form = document.querySelector("form");
 const inputs = document.querySelectorAll(".player_form input");
 const playBtn = document.querySelector(".play_btn");
+let playerX = document.querySelector("#player-X");
+let playerO = document.querySelector("#player-O");
 const squares = document.querySelectorAll(".square");
 const restartBtn = document.querySelector(".restart_btn");
 
@@ -40,8 +42,8 @@ twoPlayerBtn.addEventListener("click", function() {
 function formSubmission() {
   const label1 = document.createElement("label");
   const label2 = document.createElement("label");
-  label1.textContent =`PLAYER1: ${inputs[0].value}`;
-  label2.textContent =`PLAYER2: ${inputs[1].value}`;
+  label1.textContent =`Player-X: ${inputs[0].value}`;
+  label2.textContent =`Player-O: ${inputs[1].value}`;
   label1.classList.add("label-right");
   label2.classList.add("label-left");
 
@@ -53,8 +55,8 @@ function formSubmission() {
 
 playBtn.addEventListener("click", function(event) {
   event.preventDefault();
-  let player1 = document.querySelector("#player-1").value;
-  let player2 = document.querySelector("#player-2").value;
+   playerX.value;
+   playerO.value;
    boardSelection.style.display = "block"; 
    squares.forEach(square => {
     square.style.backgroundColor = "rgb(54, 231, 208)";  
@@ -70,3 +72,24 @@ AIplayerBtn.addEventListener("click", function() {
         square.style.backgroundColor = "rgb(156, 156, 241)";  
     });   
 })
+
+let currentPlayer = 'X';
+let currentPlayerDisplay = document.querySelector("#current_Player");
+squares.forEach(square => {
+  square.addEventListener('click', function() {
+    if (!square.disabled) {
+      if (currentPlayer === 'X') {
+        square.textContent = 'X';
+        currentPlayer = 'O';
+        currentPlayerDisplay.textContent = "Player O's turn";
+      } else {
+        square.textContent = 'O';
+        currentPlayer = 'X';
+        currentPlayerDisplay.textContent = "Player X's turn";
+      }
+      square.disabled = true;
+      return;
+    }
+  });
+});
+
