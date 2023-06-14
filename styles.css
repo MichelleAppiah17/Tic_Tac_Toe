@@ -91,7 +91,14 @@ input{
 #current_Player{
     color: brown;
     position: absolute;
-    top: 40%;
+    top: 95%;
+    left: 55%;
+}
+#message{
+    font-size: 20px;
+    color: rgb(126, 9, 106);
+    position: absolute;
+    top: 38%;
     left: 38%;
 }
 .square{
