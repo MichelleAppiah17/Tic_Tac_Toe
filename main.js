@@ -11,7 +11,7 @@ let playerX = document.querySelector("#player-X");
 let playerO = document.querySelector("#player-O");
 let message = document.querySelector("#message");
 const squares = document.querySelectorAll(".square");
-const restartBtn = document.querySelector(".restart_btn");
+const resetBtn = document.querySelector(".reset_btn");
 
 function hideElements() {
     boardSelection.style.display = "none";
@@ -101,7 +101,7 @@ function checkWinner() {
       squares[a].textContent === squares[b].textContent &&
        squares[a].textContent === squares[c].textContent
        ) {
-        
+
       const winner = squares[a].textContent;
       message.textContent = `Congratulations, ${winner} wins!`;
       return squares[a].textContent;
@@ -119,31 +119,47 @@ function checkWinner() {
 let currentPlayer = 'X';
 let currentPlayerDisplay = document.querySelector("#current_Player");
 
-squares.forEach(square => {
-  square.addEventListener('click', function() {
-    if (!square.disabled) {
-      if (currentPlayer === 'X') {
-        square.textContent = 'X';
-        currentPlayer = 'O';
-        currentPlayerDisplay.textContent = "Player O's turn";
-      } else {
-        square.textContent = 'O';
-        currentPlayer = 'X';
-        currentPlayerDisplay.textContent = "Player X's turn";
-      }
-      square.disabled = true;
 
-      const winner = checkWinner();
-      if (winner !== null) {
-        currentPlayerDisplay.textContent = "";
-      }else if (isBoardFull()) {
-        message.textContent = "It's a tie!";
-        currentPlayerDisplay = "";
-      }else{
-        currentPlayerDisplay.textContent = `Player ${currentPlayer}'s turn`;
-      }
+function handleSquares(square) {
+  if (!square.disabled) {
+    if (currentPlayer === 'X') {
+      square.textContent = 'X';
+      currentPlayer = 'O';
+      currentPlayerDisplay.textContent = "Player O's turn";
+    } else {
+      square.textContent = 'O';
+      currentPlayer = 'X';
+      currentPlayerDisplay.textContent = "Player X's turn";
     }
-    
-  });
-});
+    square.disabled = true;
 
+    const winner = checkWinner();
+    if (winner !== null) {
+      currentPlayerDisplay.textContent = "";
+    }else if (isBoardFull()) {
+      message.textContent = "It's a tie!";
+      currentPlayerDisplay = "";
+    }else{
+      currentPlayerDisplay.textContent = `Player ${currentPlayer}'s turn`;
+    }
+  }
+}
+squares.forEach(square => {
+  square.addEventListener('click', function () {
+    handleSquares(square);
+  });
+});    
+
+function ResetGame() {
+  squares.forEach(square => {
+    square.textContent = "";
+    square.disabled = false;
+  });
+  message.textContent = "";
+  currentPlayer = "X";
+  currentPlayerDisplay.textContent = `Player ${currentPlayer}'s turn`;
+}
+ 
+resetBtn.addEventListener("click", function(){
+  ResetGame();
+});
